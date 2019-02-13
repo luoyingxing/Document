@@ -1,0 +1,31 @@
+1、（先进入项目文件夹）通过命令 gitinit 把这个目录变成git可以管理的仓库
+git init
+
+
+2、把文件添加到本地版本库中，使用命令git add 文件；添加到暂存区里面去，如果后面接小数点“.”，意为添加文件夹下的所有文件
+git add .
+
+
+3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明
+git commit -m 'first commit'
+
+
+4、关联到远程库
+git remote add origin 你的远程库地址
+
+如：
+
+git remote add origin git@192.168.31.130:/srv/sample.git
+
+如果上面步骤写错了：则
+
+      git remote rm origin   //删除origin
+
+      git remote add origin git@git.oschina.net:yourname/demo.git   //重新添加origin
+
+5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
+git pull --rebase origin master
+
+
+6、将最新的修改推送到远程仓库：gitpush -u origin master
+    备注:origin:远程仓库名字;master:分支
